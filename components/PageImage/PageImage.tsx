@@ -24,14 +24,7 @@ export const PageImage = ({ url }: any) => {
   
   return (
     <m.div
-      animate={{ x: 0, opacity: 1 }}
-      initial={{ x: "-100%", opacity: 0 }}
-      transition={{
-        delay: 0.5,
-        duration: 0.5,
-        type: "spring",
-        stiffness: 120,
-      }}
+      
     >
       <img
         src={url}
