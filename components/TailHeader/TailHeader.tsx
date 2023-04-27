@@ -1,23 +1,26 @@
-import { Fragment, useState } from 'react'
-import Link from 'next/link'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import {
-  ArrowPathIcon,
-  Bars2Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import { MobileMenu } from '../MobileMenu/MobileMenu'
-
-
-
+import { Fragment, useState } from "react";
+import Link from "next/link";
+import { Popover } from "@headlessui/react";
+import { Bars2Icon } from "@heroicons/react/24/outline";
+import { MobileMenu } from "../MobileMenu/MobileMenu";
+import { motion as m } from "framer-motion";
+const headerAnim = {
+  hidden: {
+    y: -70,
+  },
+  visible: {
+    y: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+      type: "spring",
+      mass: 0.4,
+      damping: 4,
+    },
+  },
+};
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -29,8 +32,16 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-inherit absolute top-0 left-0 right-0 text-white header">
-      <nav className="mx-auto flex items-center justify-between p-6 md:px-8" aria-label="Global">
+    <m.header
+      className="bg-inherit absolute top-0 left-0 right-0 text-white header"
+      variants={headerAnim}
+      initial="hidden"
+      animate="visible"
+    >
+      <nav
+        className="mx-auto flex items-center justify-between p-6 md:px-8"
+        aria-label="Global"
+      >
         <div className="flex md:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <img className="h-12 w-auto" src="/logo.png" alt="" />
@@ -50,13 +61,22 @@ export default function Header() {
           <Link href="/" className="text-sm font-semibold leading-6 text-white">
             Home
           </Link>
-          <Link href="/Works" className="text-sm font-semibold leading-6 text-white">
+          <Link
+            href="/Works"
+            className="text-sm font-semibold leading-6 text-white"
+          >
             Works
           </Link>
-          <Link href="/About" className="text-sm font-semibold leading-6 text-white">
+          <Link
+            href="/About"
+            className="text-sm font-semibold leading-6 text-white"
+          >
             About
           </Link>
-          <Link href="/Blog" className="text-sm font-semibold leading-6 text-white">
+          <Link
+            href="/Blog"
+            className="text-sm font-semibold leading-6 text-white"
+          >
             Blog
           </Link>
         </Popover.Group>
@@ -66,7 +86,7 @@ export default function Header() {
           </a>
         </div>
       </nav>
-      <MobileMenu  isOpen={isModalOpen} onClose={handleCloseModal}/>
-    </header>
-  )
+      <MobileMenu isOpen={isModalOpen} onClose={handleCloseModal} />
+    </m.header>
+  );
 }
