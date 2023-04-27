@@ -1,9 +1,14 @@
 import React from "react";
 import { motion as m } from "framer-motion";
 import { PageImage } from "../PageImage/PageImage";
+import Head from "next/head";
 const Content = () => {
   return (
     <section>
+      <Head>
+        <title>Home</title>
+        <meta name="description" content="sargsyan" />
+      </Head>
       <m.div className="bg-yellow-400 absolute top-0 left-0  w-full h-screen flex justify-center items-center"
        animate={{ x: "0%" }}
        exit={{ opacity: 1 }}

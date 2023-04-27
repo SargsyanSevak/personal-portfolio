@@ -1,8 +1,13 @@
 import React from "react";
 import {motion as m} from 'framer-motion'
+import Head from "next/head";
 const Blog = () => {
   return (
     <section>
+      <Head>
+        <title>Blog</title>
+        <meta name="description" content="sargsyan" />
+      </Head>
       <m.div className="bg-purple-700 absolute top-0 left-0  w-full h-screen flex justify-center items-center page"
        animate={{ x: "0%" }}
        exit={{ opacity: 1 }}

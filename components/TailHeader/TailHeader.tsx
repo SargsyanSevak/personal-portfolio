@@ -20,7 +20,7 @@ const headerAnim = {
     },
   },
 };
-const navAnim = {};
+
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
