@@ -53,7 +53,7 @@ export const PageImage = ({ url }: any) => {
       style={{
         y: y,
         opacity: hasScrolled ? 0 : 1,
-        transition: "all 0.8s easeIn",
+        transition: "all 0.2s ease",
       }}
     >
       <img

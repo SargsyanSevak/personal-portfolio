@@ -17,6 +17,7 @@ body {
   height: 100%;
   font-family: 'Castoro Titling', cursive;
   font-weight: 700;
+  scroll-behavior: smooth;
 }
 .social{
   z-index: 60;
