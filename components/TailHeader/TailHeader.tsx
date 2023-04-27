@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-inherit fixed top-0 left-0 right-0 text-white z-50">
+    <header className="bg-inherit absolute top-0 left-0 right-0 text-white header">
       <nav className="mx-auto flex items-center justify-between p-6 md:px-8" aria-label="Global">
         <div className="flex md:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">

@@ -30,8 +30,11 @@ body {
 
 .social-items{
   clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
-}
 
+}
+.header{
+  z-index: 100;
+}
 .icon-scroll,
 .icon-scroll:before {
   position: fixed;

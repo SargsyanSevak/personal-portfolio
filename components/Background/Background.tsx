@@ -23,7 +23,7 @@ const Background = () => {
   return (
     <div className="bg  w-full h-screen">
       <Social/>
-      <ScrollIcon/>
+      
       
       {/* <button onClick={handleOpenModal} className=" text-white px-4 py-2  fixed z-50 top-0 right-0">
         Open Modal

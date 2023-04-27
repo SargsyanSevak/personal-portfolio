@@ -4,6 +4,7 @@ import Background from "../Background/Background";
 import Header from "../TailHeader/TailHeader";
 import { AnimatePresence,motion } from "framer-motion";
 import { useRouter } from "next/router";
+import ScrollIcon from "../UI/ScrollIcon/ScrollIcon";
 interface LayoutProps {
   children: ReactNode;
 }
@@ -13,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Header />
       <Background />
-    
+      <ScrollIcon/>
       <AnimatePresence initial={false}
       >
         <motion.main
