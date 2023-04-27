@@ -1,9 +1,10 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Popover } from "@headlessui/react";
 import { Bars2Icon } from "@heroicons/react/24/outline";
 import { MobileMenu } from "../MobileMenu/MobileMenu";
 import { motion as m } from "framer-motion";
+
 const headerAnim = {
   hidden: {
     y: -70,
@@ -19,7 +20,7 @@ const headerAnim = {
     },
   },
 };
-
+const navAnim = {};
 export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -53,32 +54,63 @@ export default function Header() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             onClick={handleOpenModal}
           >
-            <span className="sr-only">Open main menu</span>
             <Bars2Icon className="h-12 w-12 font-bold" aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden md:flex md:gap-x-12">
-          <Link href="/" className="text-sm font-semibold leading-6 text-white">
-            Home
-          </Link>
-          <Link
-            href="/Works"
-            className="text-sm font-semibold leading-6 text-white"
-          >
-            Works
-          </Link>
-          <Link
-            href="/About"
-            className="text-sm font-semibold leading-6 text-white"
-          >
-            About
-          </Link>
-          <Link
-            href="/Blog"
-            className="text-sm font-semibold leading-6 text-white"
-          >
-            Blog
-          </Link>
+          <m.ul className="md:flex md:gap-x-12">
+            <m.li
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 1, staggerChildren: 0.5 }}
+            >
+              <Link
+                href="/"
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                Home
+              </Link>
+            </m.li>
+
+            <m.li
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 1, staggerChildren: 0.5 }}
+            >
+              <Link
+                href="/Works"
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                Works
+              </Link>
+            </m.li>
+
+            <m.li
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.9, duration: 1, staggerChildren: 0.5 }}
+            >
+              <Link
+                href="/About"
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                About
+              </Link>
+            </m.li>
+
+            <m.li
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1, duration: 1, staggerChildren: 0.5 }}
+            >
+              <Link
+                href="/Blog"
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                Blog
+              </Link>
+            </m.li>
+          </m.ul>
         </Popover.Group>
         <div className="hidden md:flex md:flex-1 md:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-white">
