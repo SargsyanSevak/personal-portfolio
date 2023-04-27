@@ -3,6 +3,7 @@ import { motion as m } from "framer-motion";
 import { PageImage } from "../PageImage/PageImage";
 import Head from "next/head";
 const Content = () => {
+  
   return (
     <section>
       <Head>
