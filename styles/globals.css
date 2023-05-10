@@ -13,12 +13,53 @@ html {
 
 body {
   position: relative;
-  width: 100%;
-  height: 100%;
+ 
   font-family: 'Castoro Titling', cursive;
   font-weight: 700;
-  scroll-behavior: smooth;
+  
+  overscroll-behavior-y: none;
+  user-select: none;
+ 
+  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+.scroll-container {
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+.content {  
+  margin: 25px auto;
+  padding: 15px 18px 75px 18px;
+  width: 95vw;
+  max-width: 800px;
+  background-color: #141414;
+}
+  .content p {
+    font-family: sans-serif;
+    line-height: 0.95;
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    color: whitesmoke;
+  }
+
+  .content img {
+    display: block;
+    height: 600px;
+    width: 100%;
+    margin-top: 15px;
+    object-fit: cover;
+    object-position: top;
+  }
+
 .social{
   z-index: 60;
 }
@@ -102,4 +143,6 @@ body {
     transform: translateY(46px);
   }
 }
+
+
 
